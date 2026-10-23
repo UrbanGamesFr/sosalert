@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SOSAlert</title>
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#d6331f">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/app.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}
+.hero{border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:8px;background:var(--sos);color:var(--sos-ink)}
+.hero.calm{background:var(--ok-soft);color:var(--ok)}
+.hero h1{font-size:1.5rem}</style>
+</head>
+<body>
+<div id="app">
+  <header class="top"><div class="top-in"><div class="brand"><span class="mark" aria-hidden="true"></span>SOSAlert</div></div></header>
+  <main id="view" aria-live="polite"><p class="muted center" style="padding:40px 0">Chargement…</p></main>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="/contact.js"></script>
+</body>
+</html>

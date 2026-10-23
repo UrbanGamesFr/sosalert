@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SOSAlert</title>
+<meta name="theme-color" content="#d6331f">
+<meta name="robots" content="noindex">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="stylesheet" href="/app.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+<div id="app">
+  <header class="top" id="topbar" hidden>
+    <div class="top-in">
+      <div class="brand"><span class="mark" aria-hidden="true"></span>SOSAlert</div>
+      <button class="pill off" id="gpsPill" type="button" aria-label="Actualiser la position">GPS</button>
+    </div>
+    <div class="offline" id="offlineBand" hidden>Hors connexion : les alertes seront envoyées dès le retour du réseau. En danger, appelez le 112.</div>
+    <div class="demo" id="verifyBand" hidden></div>
+  </header>
+  <main id="view" aria-live="polite"><p class="muted center" style="padding:40px 0">Chargement…</p></main>
+  <nav class="tabs" id="tabs" aria-label="Navigation" hidden>
+    <div class="tabs-in">
+      <button class="tab" data-tab="home" type="button"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M12 8v5M12 16v.5"/></svg>Alerte</button>
+      <button class="tab" data-tab="trip" type="button"><svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 000-6H9a3 3 0 010-6h6.5"/></svg>Trajet</button>
+      <button class="tab" data-tab="contacts" type="button"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 010 6.8M18 14.8c1.8.7 3 2.4 3.5 5.2"/></svg>Contacts</button>
+      <button class="tab" data-tab="history" type="button"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Historique</button>
+      <button class="tab" data-tab="settings" type="button"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>Réglages</button>
+    </div>
+  </nav>
+</div>
+<div id="overlay" hidden></div>
+<div id="sheetWrap" hidden>
+  <div class="scrim" data-act="closeSheet"></div>
+  <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <button class="btn ghost sheet-x" type="button" data-act="closeSheet">Fermer</button>
+    <div id="sheetBody" class="stack"></div>
+  </section>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="/app.js"></script>
+</body>
+</html>
